@@ -61,8 +61,9 @@ if st.button("🎧 Générer l'audio") and phrases:
         fr_mp3.seek(0)
         en_mp3.seek(0)
 
-        fr_audio = AudioSegment.from_file(fr_mp3, format="mp3")
-        en_audio = AudioSegment.from_file(en_mp3, format="mp3")
+        fr_audio = AudioSegment.from_mp3(fr_mp3)
+        en_audio = AudioSegment.from_mp3(en_mp3)
+
 
         audio += fr_audio + AudioSegment.silent(duration=2000)
         for _ in range(repeat):
